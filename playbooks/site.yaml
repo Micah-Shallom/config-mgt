@@ -21,8 +21,8 @@
 - hosts: uat-webservers
 - import_playbook: ../static-assignments/uat-webservers.yaml
 
-# - hosts: db
-# - import_playbook: ../static-assignments/database.yaml
+- hosts: db
+- import_playbook: ../static-assignments/database.yaml
 
 - hosts: lb
 - name: Loadbalancers assignment

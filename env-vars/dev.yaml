@@ -1,9 +1,2 @@
-# [uat-webservers]
-# 172.31.19.106 ansible_ssh_user='ec2-user'
-# 172.31.24.204 ansible_ssh_user='ec2-user'
-
-# [db]
-# 172.31.36.232 ansible_ssh_user='ec2-user' 
-
-# [lb]
-# 172.31.47.191 ansible_ssh_user='ubuntu'
+enable_nginx_lb: true
+load_balancer_is_required: true

@@ -10,6 +10,7 @@
 #   tags:
 #     - always
 
+
 - hosts: all
 - name: Include dynamic variables 
   include: ../dynamic-assignments/env-vars.yaml
@@ -22,10 +23,6 @@
 
 # - hosts: db
 # - import_playbook: ../static-assignments/database.yaml
-# - hosts: nginx-webserver
-# - import_playbook: ../static-assignments/nginx.yaml
-# - hosts: apache-webserver
-# - import_playbook: ../static-assignments/apache.yaml
 
 - hosts: lb
 - name: Loadbalancers assignment

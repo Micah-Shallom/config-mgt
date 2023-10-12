@@ -9,9 +9,9 @@ Installs and configures MySQL or MariaDB server on RHEL/CentOS or Debian/Ubuntu 
 No special requirements; note that this role requires root access, so either run it in a playbook with a global `become: yes`, or invoke the role in your playbook like:
 
 ```yaml
-- hosts: database
+- hosts: db
   roles:
-    - role: geerlingguy.mysql
+    - role: mysql
       become: yes
 ```
 
@@ -21,8 +21,8 @@ Available variables are listed below, along with default values (see `defaults/m
 
 ```yaml
 mysql_user_home: /root
-mysql_user_name: root
-mysql_user_password: root
+mysql_user_name: webaccess
+mysql_user_password: password123
 ```
 
 The home directory inside which Python MySQL settings will be stored, which Ansible will use when connecting to MySQL. This should be the home directory of the user which runs this Ansible role. The `mysql_user_name` and `mysql_user_password` can be set if you are running this role under a non-root user account and want to set a non-root user.
@@ -210,12 +210,12 @@ If you have only installed `ansible-core`, be sure to require `community.mysql` 
 
 ## Example Playbook
 
-    - hosts: db-servers
+    - hosts: db
       become: yes
       vars_files:
         - vars/main.yml
       roles:
-        - { role: geerlingguy.mysql }
+        - { role: mysql }
 
 *Inside `vars/main.yml`*:
 

@@ -82,14 +82,14 @@ nginx_vhosts: []
 #   template: "" # Can be used to override the `nginx_vhost_template` per host.
 #   state: "absent" # To remove the vhost configuration.
 
-nginx_upstreams: []
-# - name: myapp1
-#   strategy: "ip_hash" # "least_conn", etc.
-#   keepalive: 16 # optional
-#   servers:
-#     - "srv1.example.com"
-#     - "srv2.example.com weight=3"
-#     - "srv3.example.com"
+nginx_upstreams: 
+- name: myapp1
+  strategy: "ip_hash" # "least_conn", etc.
+  keepalive: 16 # optional
+  servers:
+    - "13.59.229.198"
+    - "3.142.145.72"
+    # - "srv3.example.com"
 
 nginx_log_format: |-
   '$remote_addr - $remote_user [$time_local] "$request" '

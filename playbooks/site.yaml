@@ -15,7 +15,7 @@
 
 - hosts: lb
 - name: Loadbalancers assignment
-  import_playbook: ../static-assignments/loadbalancers.yml
+  import_playbook: ../static-assignments/loadbalancer.yaml
   when: load_balancer_is_required 
 
 - hosts: all
